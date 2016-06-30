@@ -1,57 +1,22 @@
-gTTS
-====
+Final Project Network Programming
+(Google Text to Speech)
 
-**gTTS** (Google Text to Speech): a Python interface to Google's Text to Speech API. Create an mp3 file with the `gTTS` module or `gtts-cli` command line utility. It allows for unlimited lengths of spoken text by tokenizing long sentences where the speech would naturally pause.
+(Google Text to Speech): a Python interface to Google’s Text to Speech API. Create an mp3 file
+Core files: 
+Bin/gtts-cli.py
+tests/tts.py
 
-[![Build Status](https://travis-ci.org/pndurette/gTTS.svg?branch=master)](https://travis-ci.org/pndurette/gTTS)
+For gtts-cli.py "[text to speech]" -l '[language code]' -o [file name].mp3
 
-Install
--------
+For File: gtts-cli.py -f [filename].txt -l '[language code]' -o [file name].mp3
 
-    pip install gTTS
 
-Module
-------
-
-Instanciate:
-
-    >> from gtts import gTTS
-    >> tts = gTTS(text='Hello', lang='en')
-    >> tts.save("hello.mp3")
-
-**Parameters**:
-
-  *  `text` is the text to speak to file;
-  *  `lang` is the language to speak in. A ISO 639-1 language code supported by the Google Text to Speech API.
-
-Using a file-like object (Ex.):
-
-    >> from gtts import gTTS
-    >> from tempfile import TemporaryFile
-    >> tts = gTTS(text='Hello', lang='en')
-    >> f = TemporaryFile()
-    >> tts.write_to_fp(f)
-    >> f.close()
-
-Command line utility
---------------------
-Invoke `gtts-cli`:
-
-    gtts-cli.py --help
-    usage: gtts-cli.py [-h] (["text to speak"] | -f FILE) [-l LANG] [--debug] [-o destination_file]
-
-(Ex.) Read the string 'Hello' in English to hello.mp3
-
-    $ gtts-cli.py "Hello" -l 'en' -o hello.mp3
-
-(Ex.) Read the contents of file 'hello.txt' in Czech to hello.mp3:
-
-    $ gtts-cli.py -f hello.txt -l 'cs' -o hello.mp3
-
+https://preview.c9users.io/iseiseje/mid-project/gTTS/helo.mp3
 Supported Languages
 -------------------
 
-  * 'af' : 'Afrikaans'
+   
+* 'af' : 'Afrikaans'
   * 'sq' : 'Albanian'
   * 'ar' : 'Arabic'
   * 'hy' : 'Armenian'
@@ -102,11 +67,5 @@ Supported Languages
   * 'tr' : 'Turkish'
   * 'vi' : 'Vietnamese'
   * 'cy' : 'Welsh'
+ 
 
-Contributing
-------------
-
-1. Fork [pndurette/gTTS](https://github.com/pndurette/gTTS) on GitHub and clone it locally
-2. Make sure you write tests for new features or modify the existing ones if necessary
-3. Open a new Pull Request from your feature branch to the `develop` branch.
-4. Thank you!
